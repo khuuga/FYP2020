@@ -40,7 +40,7 @@ sh scripts/download_model.sh
 ```
 2. Now the pretrained models would place in [checkpoints](checkpoints).
 
-To download the pretrained models fine-tuned for comic book dataset, please refer to:
+To download the pretrained models fine-tuned for comic book dataset, please refer to: https://drive.google.com/drive/folders/1i-e8gW3oxyDdQKhLMpyTYSSZKv9LB3xu?usp=sharing
 
 ## Instance Prediction
 Please follow the command below to predict all the bounding boxes fo the images in `example` folder.
