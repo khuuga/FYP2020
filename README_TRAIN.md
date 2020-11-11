@@ -1,22 +1,8 @@
-# [CVPR 2020] Instance-aware Image Colorization
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ericsujw/InstColorization/blob/master/InstColorization.ipynb)
+# FYP2020 Fine-tuning the model "Instance-aware Image Colorization"
+This code is based mostly on the project:
+https://github.com/ericsujw/InstColorization
 
-### [[Paper](https://arxiv.org/abs/2005.10825)] [[Project Website](https://ericsujw.github.io/InstColorization/)] [[Google Colab](https://colab.research.google.com/github/ericsujw/InstColorization/blob/master/InstColorization.ipynb)]
-
-<p align='center'>
-<img src='imgs/teaser.png' width=1000>
-</p>
-
-Image colorization is inherently an ill-posed problem with multi-modal uncertainty. Previous methods leverage the deep neural network to map input grayscale images to plausible color outputs directly. Although these learning-based methods have shown impressive performance, they usually fail on the input images that contain multiple objects. The leading cause is that existing models perform learning and colorization on the entire image. In the absence of a clear figure-ground separation, these models cannot effectively locate and learn meaningful object-level semantics. In this paper, we propose a method for achieving instance-aware colorization. Our network architecture leverages an off-the-shelf object detector to obtain cropped object images and uses an instance colorization network to extract object-level features. We use a similar network to extract the full-image features and apply a fusion module to full object-level and image-level features to predict the final colors. Both colorization networks and fusion modules are learned from a large-scale dataset. Experimental results show that our work outperforms existing methods on different quality metrics and achieves state-of-the-art performance on image colorization.
-
-
-**Instance-aware Image Colorization**
-<br/>
-[Jheng-Wei Su](https://github.com/ericsujw), 
-[Hung-Kuo Chu](https://cgv.cs.nthu.edu.tw/hkchu/), and 
-[Jia-Bin Huang](https://filebox.ece.vt.edu/~jbhuang/)
-<br/>
-In IEEE Conference on Computer Vision and Pattern Recognition (CVPR), 2020.
+This project aims to fine-tune one of the current state of the art models for image colourisation. The colourisation model in investigation utilises a 3 model system, a full mode colouristaion, which is the basis for the instance and fusion colourisation models. These models are fine-tuned on a comic book dataset to observe if this model can be customised for personal/other uses.
 
 ## Prerequisites
 * [CUDA 10.1](https://developer.nvidia.com/cuda-10.1-download-archive-update2)
@@ -77,6 +63,8 @@ Simply run the following command, then the training pipeline would get start.
 ```sh
 sh scripts/train.sh
 ```
+*Please refer to the trainft python scripts, and change accordingly in the train.sh scripts.*
+
 To view training results and loss plots, run `visdom -port 8098` and click the URL http://localhost:8098.
 
 This is a 3 stage training process.
@@ -94,19 +82,6 @@ This is a 3 stage training process.
     ```
     All the colorized results would save in `results` folder.
 
-## License
-This work is licensed under MIT License. See [LICENSE](LICENSE) for details. 
-
-## Citation
-If you find our code/models useful, please consider citing our paper:
-```
-@inproceedings{Su-CVPR-2020,
-  author = {Su, Jheng-Wei and Chu, Hung-Kuo and Huang, Jia-Bin},
-  title = {Instance-aware Image Colorization},
-  booktitle = {IEEE Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year = {2020}
-}
-```
 
 ## Acknowledgments
-Our code borrows heavily from the amazing [colorization-pytorch](https://github.com/richzhang/colorization-pytorch) repository.
+This project heavily utilises the code from https://github.com/ericsujw/InstColorization
