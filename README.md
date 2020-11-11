@@ -63,7 +63,8 @@ Please follow this [tutorial](README_TRAIN.md) to train the colorization model.
 
 This model can be adjusted for fine-tuning, please refer to the set of finetuning training python code. trainft.py, trainft_instance.py and trainft_fusion.py 
 
-
+## Resizing the output images to full size
+To resize to original size, run test.py. Only applicable to images in results and example folders. If the images are not .png, reflect these changes in the test.py file.
 
 ## Acknowledgments
 This project heavily utilises the code from https://github.com/ericsujw/InstColorization
